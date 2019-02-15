@@ -10,10 +10,10 @@
 console.log('Hello World from Webpacker')
 import 'bootstrap';
 import { showForm } from '../components/form';
-import { selectIngredients } from '../components/select2';
+import { multipleSelect } from '../components/select2';
 
 showForm();
-// selectIngredients();
+// multipleSelect();
 
 
 

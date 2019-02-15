@@ -20,11 +20,9 @@
       </ul>
     </div>
   <% end %>
-  <%= f.association :ingredient %>
+  <%= f.association :ingredient, input_html: { class: 'multiple-select' } %>
   <%= f.input :description %>
   <%= f.submit "Add", class: "btn btn-primary" %>
 <% end %>
 
-<!-- <p>
-  <span id="banner-typed-text"></span>
-</p> -->
+
