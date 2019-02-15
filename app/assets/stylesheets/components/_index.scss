@@ -1,3 +1,23 @@
 // Import your components CSS files here.
 @import "alert";
 @import "navbar";
+@import "card";
+
+.link-no-style:hover {
+  text-decoration: none;
+}
+
+a {
+  color: white;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.new_dose {
+  display: none;
+}
