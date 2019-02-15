@@ -4,15 +4,24 @@
 
 <ul>
 <% @cocktail.doses.each do |dose| %>
-  <li><%= dose.ingredient.name %>: <%= dose.description %></li>
+  <li><%= dose.ingredient.name %>: <%= dose.description %> <%= link_to('', dose_path(dose), method: :delete, class: "fa fa-trash black-trash" ) %></li>
 <% end %>
 </ul>
 
 <button class="btn btn-secondary btn-dose">Add ingredient</button>
 
 <%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.input :description %>
+  <% if @dose.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @dose.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <%= f.association :ingredient %>
+  <%= f.input :description %>
   <%= f.submit "Add", class: "btn btn-primary" %>
 <% end %>
 
